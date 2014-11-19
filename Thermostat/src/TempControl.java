@@ -39,9 +39,9 @@ public class TempControl {
 			case AC: case HEAT:
 				System.out.println("Error: cannot access this mode from current mode of OFF.");
 				break;
-				
+
 			default:
-				System.out.println("Error in SetMode.");
+				System.out.println("Error in SetMode - nextMode falls throug switch-case.");
 				break;
 			}
 
@@ -90,9 +90,13 @@ public class TempControl {
 				break;
 
 			default:
-				System.out.println("Error in SetMode.");
+				System.out.println("Error in SetMode - nextMode falls throug switch-case.");
 				break;
 			}
+
+		default:
+			System.out.println("Error in currentMode -- falls through switch-case.");
+			break;
 		}
 	}
 

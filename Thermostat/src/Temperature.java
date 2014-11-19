@@ -18,8 +18,6 @@ public class Temperature
 		return temp;
 	}
 
-	
-
 	public void set(float temp) 
 	{
 		this.temp = temp;

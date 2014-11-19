@@ -1,12 +1,12 @@
 
 public class IndoorTempSensor {
-	private long rawSensorValue = 70;
+	private long rawSensorValue;
 	private Temperature currentTemp = new Temperature ((float) rawSensorValue);
 	
 		
-	public IndoorTempSensor(long rawSensorValue, Temperature currentTemp) 
+	public IndoorTempSensor(Temperature currentTemp) 
 	{
-		this.rawSensorValue = rawSensorValue;
+		this.rawSensorValue = 0;
 		this.currentTemp = currentTemp;
 	}
 

@@ -9,7 +9,7 @@ public class ThermDriver {
 	private Temperature currentTemp = new Temperature ();
 	private TempControl myTempControl = new TempControl (currentTemp, desiredTemp, myAC, myHeater, myBackupHeater, myFan);
 	private Thermostat MyThermostat = new Thermostat(desiredTemp);
-	private IndoorTempSensor myIndoorTemp = new IndoorTempSensor (10, currentTemp);
+	private IndoorTempSensor myIndoorTemp = new IndoorTempSensor (currentTemp);
 	
 	public static void main(String [] args)
 	{
