@@ -14,5 +14,6 @@ public class ThermDriver {
 	public static void main(String [] args)
 	{
 			//drives the system	; vroom vroom
+		System.out.println("Print.");
 	}
 }
