@@ -44,6 +44,7 @@ public class TempControl {
 				System.out.println("Error in SetMode - nextMode falls throug switch-case.");
 				break;
 			}
+			break;
 
 		case FANONLY: case HEAT: case AC:
 			switch (nextMode)
@@ -54,12 +55,14 @@ public class TempControl {
 				myHeater.off();
 				currentMode = nextMode;
 				break;
+				
 			case FANONLY:
 				myFan.on();
 				myAC.off();
 				myHeater.off();
 				currentMode = nextMode;
 				break;
+				
 			case AC:
 				myFan.on();
 				myHeater.off();
@@ -88,12 +91,11 @@ public class TempControl {
 				}
 				currentMode = nextMode;
 				break;
-
 			default:
 				System.out.println("Error in SetMode - nextMode falls throug switch-case.");
 				break;
 			}
-
+			break;
 		default:
 			System.out.println("Error in currentMode -- falls through switch-case.");
 			break;
@@ -101,7 +103,11 @@ public class TempControl {
 	}
 
 	public void monitorTemp(){
-		//do later
+		
+	}
+	
+	public Mode getCurrentMode(){
+		return currentMode;
 	}
 }
 
