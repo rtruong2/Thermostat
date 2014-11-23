@@ -1,8 +1,5 @@
 import java.util.*;
-
-public class ThermDriver 
-{
-
+public class ThermDriver {
 	public static void main(String [] args)
 	{
 		PriHeat myHeater = new PriHeat(1);
@@ -14,17 +11,14 @@ public class ThermDriver
 		TempControl myTempControl = new TempControl (currentTemp, desiredTemp, myAC, myHeater, myBackupHeater, myFan);
 		Thermostat myThermostat = new Thermostat(desiredTemp);
 		IndoorTempSensor myIndoorTemp = new IndoorTempSensor (currentTemp);
-
 		Scanner scan = new Scanner(System.in);
-
 		while (true)
 		{
 			System.out.println("Enter option for Thermostat. "
 					+ "\n1. To turn it off or on."
-					+ "\n2. To set a desired temperature."
+					+ "\n2. To set a desired temperature and make it run it."
 					+ "\n3. To close the program.");
 			boolean breaker = false; //breaker is a flag that's intended to break out of the program's otherwise infinite loop of running.
-
 			switch(scan.nextInt())
 			{
 			case 1:
@@ -44,8 +38,9 @@ public class ThermDriver
 				}
 				break;
 			case 2:
-				System.out.println("Input desired temp.");
-				myThermostat.setDesiredTemp(scan.nextInt());
+				System.out.println("not implemented yet, lol");
+				myIndoorTemp.monitorTemp();
+				break;
 			case 3:
 				breaker = true;
 				break;
@@ -56,20 +51,6 @@ public class ThermDriver
 			if(breaker)
 				break;
 		}
-
 		scan.close();
-
-	}
-	
-	public void controlTemp(Temperature desiredTemp, Temperature currentTemp, TempControl myTempControl)
-	{
-		if (desiredTemp.get() - currentTemp.get() < -1.0)
-		{
-			myTempControl.setMode(Mode.HEAT);
-		}
-		else if (desiredTemp.get() - currentTemp.get() > 1.0)
-		{
-			
-		}
 	}
 }

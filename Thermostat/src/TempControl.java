@@ -109,5 +109,9 @@ public class TempControl {
 	public Mode getCurrentMode(){
 		return currentMode;
 	}
+	
+	public Mode getCurrentMode(){
+		return currentMode;
+	}
 }
 
