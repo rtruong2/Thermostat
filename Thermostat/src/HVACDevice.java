@@ -1,5 +1,5 @@
 public class HVACDevice {
-	private Boolean currentMode;
+	private boolean currentMode;
 	private long physicalAddress;
 
 	public HVACDevice(long physicalAddress) {

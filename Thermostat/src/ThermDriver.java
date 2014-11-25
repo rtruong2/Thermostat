@@ -38,7 +38,33 @@ public class ThermDriver {
 				}
 				break;
 			case 2:
-				System.out.println("not implemented yet, lol");
+				System.out.format("Current set temp: %f°\n", desiredTemp.get());
+				System.out.println("Press 1 to make the setpoint go up .1 degree."
+						+ "\nPress 2 to make the setpoint go down .1 degree."
+						+ "\nPress 3 to set the setpoint."
+						+ "\nPress 4 to accept setpoint and continue.");
+				boolean breakTemp = false;
+				while(!breakTemp)
+				{
+					switch(scan.nextInt())
+					{
+					case 1:
+						desiredTemp.set(desiredTemp.get() + (float).1);
+						break;
+					case 2:
+						desiredTemp.set(desiredTemp.get() - (float).1);
+						break;
+					case 3:
+						desiredTemp.set(scan.nextFloat());
+						break;
+					case 4:
+						breakTemp = true;
+					default:
+						break;
+					}
+
+					System.out.format("\nSet point is is %f.", desiredTemp.get());
+				}
 				myIndoorTemp.monitorTemp();
 				break;
 			case 3:
@@ -48,8 +74,10 @@ public class ThermDriver {
 				System.out.println("Not an option");
 				break;
 			}
-			if(breaker)
+			if(breaker){
 				break;
+			}
+			//print all status information: Mode, setpoint, temp.
 		}
 		scan.close();
 	}
